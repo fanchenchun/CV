@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
@@ -37,6 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.style.padding = '20px';
                 navLinks.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
             }
+        });
+    }
+
+    // Initialize GLightbox
+    if (typeof GLightbox !== 'undefined') {
+        const lightbox = GLightbox({
+            selector: '.glightbox'
         });
     }
 });
